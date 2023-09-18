@@ -112,9 +112,11 @@ run
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/67bca444-6bf6-4f38-9dc3-459a6711cdcc)
 
 To run the spice netlist, run ```ngspice sky130_inv.spice``` and ```plot y vs time a```
-
-
-
+<br><br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/a52ca18c-68a6-4ddb-b08a-4364e75034f2)
+<br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/f4a5d551-6286-4d9b-bc69-a3c8489ea4f0)
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/d6054c54-24ee-4f6b-a141-dcd14a49d651)
 
 
 
