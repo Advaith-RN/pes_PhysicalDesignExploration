@@ -35,3 +35,9 @@ Post-prep, our results are stored in a directory,
 Now, we execute the ```run_synthesis``` command, to synthesize the design.
 <br><br>
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/88ea3180-596b-4585-8aca-ae092414cf21)
+
+
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/e0a3d12e-caaf-4524-b5b6-2a6277678764)
+
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/015564d3-d61f-479e-a222-1b41005abafc)
+
