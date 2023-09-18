@@ -71,11 +71,47 @@ DRC errors can be checked via this tab <br><br>
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/6589850c-20ac-4bf1-bd62-9af52e27c304)
 
 ### Sky130 Tech File Labs
+Extract files by running ```extract all``` in magic.
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/d005eb91-35ee-411a-95f0-dcf28d84558d)
 
+Create the spice file via ```ext2spice cthresh 0 rthresh 0 -> this is done to copy the parasitic capacitances```, then run ```ext2spice```.
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/c5570757-8a8b-4699-83bf-dd82612e82d0)
 
+We edit the ```sky130_inv.spice``` file to our specification.
 
+```
+* SPICE3 file created from sky130_inv.ext - technology: sky130A
 
+.option scale=0.01u
 
+.include ./libs/pshort.lib
+.include ./libs/nshort.lib
+
+M1001 Y A VGND VGND nshort_model.0 w=35 l=23
++  ad=1435  pd=152  as=1365  ps=148
+M1000 Y A VPWR VPWR pshort_model.0 w=37 l=23
++  ad=1443  pd=152  as=1517  ps=156
+VDD VPWR 0 3.3V
+VSS VGND 0 0V
+Va A VGND PULSE (0 3.3V 0 0.1ns 2ns 4ns)
+C0 VPWR Y 0.117f
+C1 A VPWR 0.0754f
+C2 A VPWR 0.0774f
+C3 Y VGND 0.0279f
+C4 A VGND 0.45f
+C5 VPWR VGND 0.781f
+//.ends
+
+.tran 1n 20n
+
+.control
+run
+.endc
+.end
+```
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/67bca444-6bf6-4f38-9dc3-459a6711cdcc)
+
+To run the spice netlist, run ```ngspice sky130_inv.spice``` and ```plot y vs time a```
 
 
 
