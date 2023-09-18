@@ -115,3 +115,4 @@ run_antenna_check
 
 ### Day 1 - [Inception of Open Source EDA, Openlane and Skywater130](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/blob/main/Day1.md)
 ### Day 2 - [Chip Floorplanning Considerations and Introduction to library cells](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/blob/main/Day2.md)
+### Day 3 - [Design Library Cell](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/blob/main/Day3.md)
