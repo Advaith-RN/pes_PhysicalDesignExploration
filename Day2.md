@@ -2,8 +2,8 @@
 
 ### 1. Define Width and height of core and die
 
-- ```Die``` : Structure that consists of core which is a small semiconductor material on which the fundamental circuit is fabricated.
-- ```core``` : Structire that contains primary logic and functional components.
+- **Die** : Structure that consists of core which is a small semiconductor material on which the fundamental circuit is fabricated.
+- **Core** : Structire that contains primary logic and functional components.
 
 Whenever we come across the concepts of core and die, Utilisation factor plays an important role.
 ```
