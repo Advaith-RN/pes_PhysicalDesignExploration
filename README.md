@@ -112,3 +112,5 @@ run_magic_drc
 run_lvs
 run_antenna_check
 ```
+
+### Day 1 - [Inception of opensource-EDA, Opennlane and Skywater130](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/edit/main/Day1.md)
