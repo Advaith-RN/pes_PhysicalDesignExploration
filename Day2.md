@@ -1,4 +1,4 @@
-# Chip Floorplanning Considerations
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/59e922c9-0a08-4d20-ba3a-3d4f60249926)# Chip Floorplanning Considerations
 
 ### 1. Define Width and height of core and die
 
@@ -46,7 +46,7 @@ When a net undergoes a transition, the charge associated with coupling capacitor
 
 - Placement Blockage is a strategic measure employed to ensure that no logic elements are placed in the region designated for pin placement. This practice helps maintain the integrity of the pin placement area.
 
-## Floorplanning
+# Floorplanning
 
 Before running the floorplan, we make some changes to the config.tcl file.
 <br><br>
@@ -58,7 +58,27 @@ Now, lets ```run_floorplan```<br><br>
 The results will be shown in the runs folder.<br><br>
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/866f9cab-b5c0-4238-9778-5383e666056f)
 
-To view the layout, we use magic.
+To view the layout, we use magic. First navigate to the correct directory.
 ```
-magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/18-09_14-17/results/floorplan
+
+magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/b4799c16-a226-49f3-bc1e-ca309753b7c3)
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/ce176cad-5cd4-4df0-b516-55b8b9ce839f)
+
+Zooming into the design, we can see that the ports are equidistant.
+
+# Library Binding and Placement
+Move to the placement directory in results to view the placement.
+To view it, we use:
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def
+```
+
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/75e1d628-5359-4d6d-8a61-b677af75a13e)
+
+
+
+
+
