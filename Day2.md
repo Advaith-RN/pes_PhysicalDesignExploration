@@ -56,4 +56,9 @@ Now, lets ```run_floorplan```<br><br>
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/435be03c-ed1d-4a30-b401-4f1f441e746b)
 
 The results will be shown in the runs folder.<br><br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/866f9cab-b5c0-4238-9778-5383e666056f)
 
+To view the layout, we use magic.
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
