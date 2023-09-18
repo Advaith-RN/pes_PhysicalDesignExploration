@@ -45,3 +45,15 @@ When a net undergoes a transition, the charge associated with coupling capacitor
 - When it comes to primary inputs and outputs, pin sizes are usually kept small. In contrast, clock pins have larger sizes because they need to drive multiple cells, and reducing resistance is critical for clock signal integrity. This is where the adage holds true: larger area equals lower resistance.
 
 - Placement Blockage is a strategic measure employed to ensure that no logic elements are placed in the region designated for pin placement. This practice helps maintain the integrity of the pin placement area.
+
+## Floorplanning
+
+Before running the floorplan, we make some changes to the config.tcl file.
+<br><br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/07d082c2-957b-422b-8610-4f3db658ef85)
+
+Now, lets ```run_floorplan```<br><br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/435be03c-ed1d-4a30-b401-4f1f441e746b)
+
+The results will be shown in the runs folder.<br><br>
+
