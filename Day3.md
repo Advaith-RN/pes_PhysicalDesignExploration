@@ -71,10 +71,10 @@ DRC errors can be checked via this tab <br><br>
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/6589850c-20ac-4bf1-bd62-9af52e27c304)
 
 ### Sky130 Tech File Labs
-Extract files by running ```extract all``` in magic.
+Extract files by running ```extract all``` in magic.<br><br>
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/d005eb91-35ee-411a-95f0-dcf28d84558d)
 
-Create the spice file via ```ext2spice cthresh 0 rthresh 0 -> this is done to copy the parasitic capacitances```, then run ```ext2spice```.
+Create the spice file via ```ext2spice cthresh 0 rthresh 0 -> this is done to copy the parasitic capacitances```, then run ```ext2spice```.<br><br>
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/c5570757-8a8b-4699-83bf-dd82612e82d0)
 
 We edit the ```sky130_inv.spice``` file to our specification.
