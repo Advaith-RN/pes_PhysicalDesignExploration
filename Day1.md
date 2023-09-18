@@ -18,4 +18,20 @@ Taking a look at our OpenLane directory, we can see the following files:
 
 The config file contains specific configuration switches used by Openlane.
 <br><br>
-![Uploading image.png…]()
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/d5ed00f1-0b20-4198-bc66-9a1809f9ef75)
+
+## Design flow on picorv32a
+
+To prep the design, we must first run ```prep -design <design_name> -tag <tag>```, which in this case is
+```
+prep -design picorv32a
+```
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/664548e5-682e-4eb0-a462-1b3cdcb92abf)
+
+Post-prep, our results are stored in a directory,
+<br><br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/c8e30e52-bc5b-4980-92a6-ef8a4ff3c5eb)
+
+Now, we execute the ```run_synthesis``` command, to synthesize the design.
+<br><br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/88ea3180-596b-4585-8aca-ae092414cf21)
