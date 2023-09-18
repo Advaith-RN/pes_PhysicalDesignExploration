@@ -1,7 +1,5 @@
 # Advanced Physical Design using OpenLANE/Sky130
 
-
-
 ## ASIC design requires 3 components:
 - **RTL (Register-Transfer Level)** ```github.com, opencores.org, librecores.org```
   - RTL serves as a level of abstraction in digital design and electronics. It describes a system's behavior in terms of registers, logic gates, and the flow of data between them.
@@ -11,43 +9,41 @@
 
 - **EDA (Electronic Design Automation)** ```Skywater```:
   - Electronic Design Automation tools are specialized software tools used for designing and testing electronic systems, including ICs and PCBs.
- 
-
 
 ## RTL to GDS Flow
 ```
                   +------------------+
-                  |    Synthesis     |
+                  |    Synthesis     |     Convert HDL to logic gates
                   +------------------+
                            |
                            v
                   +------------------+
-                  |   Floorplanning  |
+                  |   Floorplanning  |     Define chip layout and block placement
                   +------------------+
                            |
                            v
                   +------------------+
-                  |   Powerplanning  |
+                  |   Powerplanning  |     Distribute power and minimize consumption
                   +------------------+
                            |
                            v
                   +------------------+
-                  |    Placement     |
+                  |    Placement     |     Position gates for timing and routability
                   +------------------+
                            |
                            v
                 +----------------------+
-                | Clock Tree Synthesis |
+                | Clock Tree Synthesis |   Create clock distribution network
                 +----------------------+
                            |
                            v
                   +------------------+
-                  |     Routing      |
+                  |     Routing      |     Establish physical wire connections
                   +------------------+
                            |
                            v
                   +------------------+
-                  |     Signoff      |
+                  |     Signoff      |     Verify design meets requirements
                   +------------------+
 ```
 
@@ -84,3 +80,32 @@ OpenLANE flow consists of several stages. By default all flow steps are run in s
     2. `Klayout` - Performs DRC Checks
     3. `Netgen` - Performs LVS Checks
     4. `CVC` - Performs Circuit Validity Checks
+  
+Openlane runs in 2 modes:
+- **Automated:** In this mode the entire flow is executed at once, for the design selected.
+```
+cd OpenLane
+make mount
+./ flow.tcl -design openlane/<DESIGN_NAME>  -tag <TAG>
+```
+- **Interactive:** In this mode the we run each step of the flow manually.
+```
+cd OpenLane
+make mount
+./flow.tcl -interactive 
+prep -design <path_to_your_design_folder> -tag <tag> -overwrite //overwrite is optional
+```
+As mentioned, we can run each step of the flow manually.
+```
+run_synthesis
+run_floorplan
+run_placement
+run_cts
+run_routing
+write_powered_verilog followed by set_netlist $::env(lvs_result_file_tag).powered.v
+run_magic
+run_magic_spice_export
+run_magic_drc
+run_lvs
+run_antenna_check
+```
