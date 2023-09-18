@@ -78,6 +78,65 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/75e1d628-5359-4d6d-8a61-b677af75a13e)
 
+## Cell Design Flow
+
+It is done in 3 parts:
+- **Inputs:**
+  - Process Design Kits (PDKs) containing DRC and LVS rules, SPICE models, libraries, and user-defined specifications.
+
+- **Design Steps:**
+  - Circuit Design
+  - Layout Design (Euler Path and Stick Diagram)
+  - Characterization
+
+- **Outputs:**
+  - Circuit Description Language (CDL)
+  - GDSII
+  - LEF
+  - Extracted SPICE netlist (.cir)
+
+**Standard Cell Library Characterization Flow:**
+
+1. **Link Model File:**
+   - Link the CMOS model file containing property definitions.
+
+2. **Specify Process Corners:**
+   - Define the specific process corners for the cell to be characterized.
+
+3. **Specify Delay and Slew Thresholds:**
+   - Specify the desired cell delay and slew thresholds as percentages.
+
+4. **Specify Timing and Power Tables:**
+   - Define the necessary timing and power tables for characterization.
+
+5. **Read Parasitic Extracted Netlist:**
+   - Read the parasitic extracted netlist associated with the cell.
+
+6. **Apply Input or Stimulus:**
+   - Apply the required input or stimulus to the cell for characterization.
+
+7. **Provide Simulation Commands:**
+   - Supply the essential simulation commands to perform the characterization.
+
+This flow outlines the steps involved in characterizing cells within a Standard Cell Library using the open-source software GUNA, enabling the library's utilization by synthesis tools for optimizing circuit arrangements.
+
+**Timing Characterization:**
+
+- Slew_low_rise_thr = 20%
+- Slew_high_rise_thr = 80%
+- Slew_low_fall_thr = 20%
+- Slew_high_fall_thr = 80%
+- In_rise_thr = 50%
+- In_fall_thr = 50%
+- Out_rise_thr = 50%
+- Out_fall_thr = 50%
+
+- **Propagation Delay:**
+  - Propagation delay = time(Out_fall_thr) - time(In_rise_thr)
+
+- **Transition Time:**
+  - On rise: time(Slew_high_rise_thr) - time(Slew_low_rise_thr)
+  - On fall: time(Slew_high_fall_thr) - time(Slew_low_fall_thr)
 
 
 
