@@ -1,4 +1,4 @@
-![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/59e922c9-0a08-4d20-ba3a-3d4f60249926)# Chip Floorplanning Considerations
+# Chip Floorplanning Considerations
 
 ### 1. Define Width and height of core and die
 
