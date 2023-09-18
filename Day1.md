@@ -1,1 +1,1 @@
-# Inception of opensource-EDA, Opennlane and Skywater130
+# Inception of Open Source EDA, Openlane and Skywater130
