@@ -63,4 +63,22 @@ magic -T sky130A.tech sky130_inv.mag
 
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/b3c31864-a95c-45ed-b273-2c1645929005)
 
+In magic, we can select a region by pressing ```s```. In the magic console, after selecting an area, execute ```what``` to display information about it.<br><br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/4ef08e19-0e0d-4f8b-aca7-8e7293a6e40c)
+
+### DRC
+DRC errors can be checked via this tab <br><br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/6589850c-20ac-4bf1-bd62-9af52e27c304)
+
+### Sky130 Tech File Labs
+
+
+
+
+
+
+
+
+
+
 
