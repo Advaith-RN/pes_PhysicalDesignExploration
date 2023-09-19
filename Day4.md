@@ -1,4 +1,4 @@
-## Extraction of LEF
+## LEF Extraction and Generation
 
 **Place and Route (PnR) Process Overview:**
 
@@ -23,3 +23,19 @@ These guidelines are essential to ensure the proper placement and routing of sta
 View the track info at ```~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tracks.info```.
 
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/0a3589a9-d3c1-4b27-acd0-cb402ec4e75e)
+
+In magic, you can also set the grid info with the following command. <br><br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/c89ccab6-074a-4a3e-8556-3a4e63dacecd)
+
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/f4d3e44e-64a5-4ba2-889f-ac700e0d6d8d)
+
+From this, we can infer that:
+- The ports A and Y are aligned along the tracks.
+- The boundary takes up a 3x9 grid.
+
+i.e. Both the conditions are met.
+
+Now, to generate the LEF file:
+- Execute ```save sky130_vsdinv.mag``` in the _tkcon_.
+- ```magic -T sky130A.tch sky130_vsdinv.mag``` in the terminal will open the new saved layout.
+- In the newly opened tkcon, execute ```lef write```.
