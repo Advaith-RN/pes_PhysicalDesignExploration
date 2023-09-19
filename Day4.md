@@ -1,4 +1,4 @@
-![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/e6303cef-2778-454f-8f6d-703a3794ea92)## LEF Extraction and Generation
+## LEF Extraction and Generation
 
 **Place and Route (PnR) Process Overview:**
 
@@ -106,10 +106,12 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/93f350fe-1cad-406b-bfba-300977ed0288)
 
-Zooming into the design with ```z```, we can see the sky_vsdinv module.
+Zooming into the design with ```z```, we can see the sky_vsdinv module.<br><br>
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/a63fde9f-8b2e-4e0b-aad5-59936bcb9734)
 
-
+## Timing Analysis
+Post our last synthesis, we got the following outputs.<br><br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/eb0da6d0-5d3d-4663-b0fc-ae55112e37a0)
 
 
 
