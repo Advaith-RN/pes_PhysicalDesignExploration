@@ -1,4 +1,4 @@
-## LEF Extraction and Generation
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/e6303cef-2778-454f-8f6d-703a3794ea92)## LEF Extraction and Generation
 
 **Place and Route (PnR) Process Overview:**
 
@@ -38,4 +38,79 @@ i.e. Both the conditions are met.
 Now, to generate the LEF file:
 - Execute ```save sky130_vsdinv.mag``` in the _tkcon_.
 - ```magic -T sky130A.tch sky130_vsdinv.mag``` in the terminal will open the new saved layout.
-- In the newly opened tkcon, execute ```lef write```.
+- In the newly opened tkcon, execute ```lef write```. This will generate and lef file. <br><br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/5d859ecd-8b68-4bc6-892c-ea551ca008ab)
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/b6af3bc8-6c5d-4730-aef0-1894243fbb8c)
+
+Use this generated lef file with the **picorv32a** design:
+- Go the this folder: ```~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src```
+- Copy the lef and other files and ensure the folder looks like this.
+<br><br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/427500d5-de5f-4d29-b44d-a36e0ec1238d)
+- Also make sure to change the ```config.tcl``` file to include the lef file.
+```
+# Design
+set ::env(DESIGN_NAME) "picorv32a"
+
+set ::env(VERILOG_FILES) "./designs/picorv32a/src/picorv32a.v"
+set ::env(SDC_FILE) "./designs/picorv32a/src/picorv32a.sdc"
+
+set ::env(CLOCK_PERIOD) "10.000"
+set ::env(CLOCK_PORT) "clk"
+
+
+set ::env(CLOCK_NET) $::env(CLOCK_PORT)
+set ::env(FP_CORE_UTIL) 65
+set ::env(FP_IO_VMETAL) 4
+set ::env(FP_IO_HMETAL) 3
+
+set ::env(LIB_SYNTH) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/sky130_fd_sc_hd__typical.lib]
+set ::env(LIB_FASTEST) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/sky130_fd_sc_hd__fast.lib]
+set ::env(LIB_SYNTH) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/sky130_fd_sc_hd__typical.lib]
+set ::env(LIB_SLOWEST) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/sky130_fd_sc_hd__slow.lib]
+
+set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
+
+set filename $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/$::env(PDK)_$::env(STD_CELL_LIBRARY)_config.tcl
+if { [file exists $filename] == 1} {
+	source $filename
+}
+```
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/70cc8387-2c4f-4419-8bad-588b27a03d0a)
+
+Now, back in the Openlane container, reprep the design, run these commands and resynthesize.
+```
+% prep -design picorv32a -tag 19-09_15-28 -overwrite
+% set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+% add_lefs -src $lefs
+% run_synthesis
+```
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/d01521c2-3c8d-4a5c-9318-3293f14e0536)
+
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/2e49ced3-5d00-4d5f-83f1-22bfc82bea59)
+
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/631107ab-bebb-4e52-99c5-a73f4d8c7d72)
+
+After synthesizing, run the floorplan and placement.
+```
+init_floorplan
+run_placement
+```
+Now, to view the placement diagram, execute this command in the placement directory in your most recent run.
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
+<br><br>
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/b0d8dafd-8132-4b7f-8d68-4ecba548e6de)
+
+
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/93f350fe-1cad-406b-bfba-300977ed0288)
+
+Zooming into the design with ```z```, we can see the sky_vsdinv module.
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/a63fde9f-8b2e-4e0b-aad5-59936bcb9734)
+
+
+
+
+
+
