@@ -43,3 +43,6 @@ Now, we execute the ```run_synthesis``` command, to synthesize the design.
 
 From the above, the flop ratio can be calculated via ```No. of flops/No. of cells = 1613/14876 = 0.108```.
 This comes out to 10.8%
+
+
+[Back to Main](https://github.com/Advaith-RN/pes_PhysicalDesignExploration)
