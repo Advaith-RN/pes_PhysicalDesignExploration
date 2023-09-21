@@ -138,6 +138,6 @@ This flow outlines the steps involved in characterizing cells within a Standard 
   - On rise: time(Slew_high_rise_thr) - time(Slew_low_rise_thr)
   - On fall: time(Slew_high_fall_thr) - time(Slew_low_fall_thr)
 
-
+[Back to Main](https://github.com/Advaith-RN/pes_PhysicalDesignExploration)
 
 
