@@ -119,4 +119,4 @@ To run the spice netlist, run ```ngspice sky130_inv.spice``` and ```plot y vs ti
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/d6054c54-24ee-4f6b-a141-dcd14a49d651)
 
 
-
+[Back to Main](https://github.com/Advaith-RN/pes_PhysicalDesignExploration)
