@@ -104,10 +104,10 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/b0d8dafd-8132-4b7f-8d68-4ecba548e6de)
 
 
-![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/93f350fe-1cad-406b-bfba-300977ed0288)
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/298c5590-a9d7-4128-ba86-9522964e61aa)
 
 Zooming into the design with ```z```, we can see the sky_vsdinv module.<br><br>
-![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/a63fde9f-8b2e-4e0b-aad5-59936bcb9734)
+![image](https://github.com/Advaith-RN/pes_PhysicalDesignExploration/assets/77977360/071add14-1a99-49db-a6ac-fc2d35b25d23)
 
 ## Timing Analysis
 Post our last synthesis, we got the following outputs.<br><br>
